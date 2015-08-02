@@ -145,6 +145,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.badou.mworking.PlandetailsActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
             android:name=".AskSubmitActivity"
             android:screenOrientation="portrait" />
         <activity

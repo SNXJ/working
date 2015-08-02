@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.badou.mworking.BackWebActivity;
 import com.badou.mworking.CommentActivity;
+import com.badou.mworking.PlandetailsActivity;
 import com.badou.mworking.R;
 import com.badou.mworking.domain.category.CategoryDetailUseCase;
 import com.badou.mworking.domain.StoreUseCase;
@@ -100,6 +101,13 @@ public class CategoryBasePresenter extends Presenter {
 
     public void onPlanDatile() {
         mCategoryBaseView.showToast("跳转计划转详情面");
+        String titleStr = mContext.getResources().getString(R.string.statistical_data);
+        String uid = UserInfo.getUserInfo().getUid();
+        String url = Net.getRunHost() + Net.getTongji(uid, mRid);
+        Intent intent = new Intent(mContext, PlandetailsActivity.class);//
+       // intent.putExtra(PlandetailsActivity.KEY_URL, url);
+        //intent.putExtra(PlandetailsActivity.KEY_TITLE, titleStr);
+        mContext.startActivity(intent);
     }
 
     /**

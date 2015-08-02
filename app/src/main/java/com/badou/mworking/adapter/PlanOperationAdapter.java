@@ -24,6 +24,11 @@ public class PlanOperationAdapter extends MyBaseAdapter<PlanOperation> {
         super(context);
     }
 
+    //臨時添加重寫
+    @Override
+    public int getCount() {
+        return 1;
+    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
@@ -34,11 +39,18 @@ public class PlanOperationAdapter extends MyBaseAdapter<PlanOperation> {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        CategoryDetail categoryDetail = getItem(position).getCategoryDetail();
+       /* CategoryDetail categoryDetail = getItem(position).getCategoryDetail();
         holder.mIndexTextView.setText((position + 1) + "");
         holder.mSubjectTextView.setText(categoryDetail.getSubject());
-        holder.mContentTextView.setText(categoryDetail.getTask().getComment());
-        holder.mCheckImageView.setImageResource(categoryDetail.getContent().isSigned() ? R.drawable.cb_entry_operation_checked : R.drawable.cb_entry_operation_unchecked);
+        holder.mContentTextView.setText(categoryDetail.getTask().getComment());*/
+
+        holder.mIndexTextView.setText(1 + "");
+        holder.mSubjectTextView.setText("計劃計劃計劃計劃計劃計劃");
+        holder.mContentTextView.setText("計劃計劃計劃計劃計劃計劃計劃計劃計劃計劃");
+
+
+        //根據返回信息設置不同類型的圖標
+        holder.mCheckImageView.setImageResource(R.drawable.url);
         return convertView;
     }
 
