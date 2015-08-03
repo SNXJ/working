@@ -40,6 +40,7 @@ public class GsonUtil {
 
     // 作为一个辅助型的方法，一般情况可以不用
     public static String toJson(Object object, Type type) {
+
         return gson.toJson(object, type);
     }
 }

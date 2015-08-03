@@ -32,7 +32,7 @@ public class PlandetailsActivity extends BaseBackActionBarActivity {
     }
 
     private void initData() {
-        planTopTitle.setText("”ãÑù√˚◊÷");
+        planTopTitle.setText("Ê†áÈ¢òÊ†áÈ¢ò");
         planTopDetail.setText("android:text=\"XtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtu" +
                 "yXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXX\"");
         PlandetailsAdapter adapter = new PlandetailsAdapter(PlandetailsActivity.this);

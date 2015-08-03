@@ -49,7 +49,9 @@ import com.badou.mworking.entity.emchat.ContactList;
 import com.badou.mworking.entity.main.MainData;
 import com.badou.mworking.entity.user.UserDetail;
 import com.badou.mworking.entity.user.UserInfo;
+import com.badou.mworking.util.GsonUtil;
 import com.google.gson.internal.LinkedTreeMap;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -308,5 +310,10 @@ public class RestRepository {
 
     public Observable<BaseNetEntity<ContactList>> getContactList(EmchatListGetUseCase.Body body) {
         return restApi.getEmchatList(AppApplication.SYSPARAM, AppApplication.appVersion, body);
+    }
+
+   public Observable<BaseNetEntity<List<Object>>> getResourceInfo(String uid, List<String> ridList) {
+        return restApi.getResourceInfo(AppApplication.SYSPARAM, AppApplication.appVersion, uid,
+                new TypedString(GsonUtil.toJson(ridList, new TypeToken<List<String>>(){}.getType())));
     }
 }

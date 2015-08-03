@@ -75,7 +75,8 @@ public class PlanIntroductionFragment  extends BaseFragment implements PlanIntro
      */
     @Override
     public void setData(CategoryDetail categoryDetail) {
-        mIntroductionTextView.setText(categoryDetail.getPlan().getContent().getDescription());
+       mIntroductionTextView.setText(categoryDetail.getEntry().getContent().getDescription()+"XXX");
+        mIntroductionTextView.setText("XXXXXXXXXX");
     }
     @Override
     public boolean checkCanDoRefresh(MaterialHeaderLayout frame, View content, View header) {

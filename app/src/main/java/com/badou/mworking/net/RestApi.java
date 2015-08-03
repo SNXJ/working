@@ -217,4 +217,10 @@ public interface RestApi {
 
     @POST("/gethxtxl")
     Observable<BaseNetEntity<ContactList>> getEmchatList(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Body EmchatListGetUseCase.Body body);
+
+    @POST("/getresinfo")
+    Observable<BaseNetEntity<List<Object>>> getResourceInfo(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version,@Query(PARAMS_UID) String uid, @Body TypedString body);
+
+
 }
+

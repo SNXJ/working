@@ -178,7 +178,7 @@ public class PlanOperationFragment extends BaseFragment implements PlanOperation
 
     @Override
     public String getTitle() {
-        return getString(R.string.entry_operation);
+        return "课程简介";
     }
 
     @Override

@@ -13,7 +13,6 @@
         android:paddingTop="@dimen/offset_medium">
 
         <TextView
-            android:text="KJVFYWRETYUIORETYUHJKRETYUIOPRTYUIOPTYUIORTYUHIERTYUIORTUI657jr7u76u4e5h6786i87irtyiu87lko9ykr7iu"
             android:id="@+id/introduction_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

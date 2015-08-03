@@ -39,10 +39,10 @@ public class PlandetailsAdapter extends MyBaseAdapter<Category> {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.indexTextView.setText("µÚ" + position+1 + "Õn");
-        holder.tvTitle.setText("ëA¶ÎÃûXXXXXX");
-        //¸ù¾İÀàĞÍÅĞ¶ÏÍ¼±ê
-        holder.tvState.setText("ÒÑÍê³É");
+        holder.indexTextView.setText("ç¬¬" + position+1 + "é˜¶æ®µ");
+        holder.tvTitle.setText("é˜¶æ®µXXXXXX");
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½Í¼ï¿½ï¿½
+        holder.tvState.setText("å·²å®Œæˆ");
         return convertView;
     }
     static class ViewHolder {

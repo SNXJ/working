@@ -38,8 +38,10 @@ public class CategoryDetail implements Serializable, StoreItem {
     String img;
     @SerializedName("link_to")
     String link_to;
+
     @SerializedName("entry")
     Entry entry;
+
     @SerializedName("task")
     Task task;
 
@@ -144,30 +146,25 @@ public class CategoryDetail implements Serializable, StoreItem {
         }
     }
 
-
     /**
      * 学习计划
      */
+
     public static class Plan implements Serializable {
 
-        @SerializedName("content")
-        PlanContent content;
-    public PlanContent getContent() {
-        return content;
+        @SerializedName("config")
+        String config;
+        @SerializedName("now")
+        String now;//计划简介
+        public  String getConfig (){
+            return config;
+        }
+        public  String getNow() {
+
+            return now;
+            }
+
     }
-}
-    public static class PlanContent implements Serializable {
-    @SerializedName("0")
-    String description;//计划简介
-    public String getDescription() {
-        return new String(Base64.decodeBase64(description.getBytes()), Charset.forName("UTF-8"));
-    }
-}
-
-
-
-
-
 
     public static class Task implements Serializable {
         @SerializedName("offline")
@@ -245,6 +242,7 @@ public class CategoryDetail implements Serializable, StoreItem {
     public void setEcnt(int ecnt) {
         this.ecnt = ecnt;
     }
+
 
     public Task getTask() {
         return task;
