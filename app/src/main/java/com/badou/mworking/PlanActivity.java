@@ -13,7 +13,7 @@ import com.badou.mworking.fragment.CommentFragment;
 import com.badou.mworking.fragment.PlanIntroductionFragment;
 import com.badou.mworking.fragment.PlanOperationFragment;
 import com.badou.mworking.presenter.ListPresenter;
-import com.badou.mworking.presenter.PlanPresenter;
+import com.badou.mworking.presenter.category.PlanPresenter;
 import com.badou.mworking.presenter.Presenter;
 import com.badou.mworking.view.PlanView;
 import com.badou.mworking.widget.CategoryHeader;

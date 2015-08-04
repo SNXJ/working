@@ -7,11 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.badou.mworking.PlanCategory;
 import com.badou.mworking.R;
 import com.badou.mworking.base.MyBaseAdapter;
+import com.badou.mworking.domain.category.CategoryGetInfoUseCase;
 import com.badou.mworking.entity.category.Category;
 import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.entity.category.Plan;
+import com.badou.mworking.entity.user.UserInfo;
+import com.badou.mworking.presenter.category.PlanDetailsPresenter;
 import com.badou.mworking.util.TimeTransfer;
 
 /**
@@ -24,14 +28,15 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         super(context);
     }
 
-
-    CategoryDetail categoryDetail=new CategoryDetail();
-
+    CategoryDetail categoryDetail = new CategoryDetail();
+    UserInfo userInfo=new UserInfo();
 
     @Override
     public View getView(int position,View convertView,ViewGroup parent){
         ViewHolder holder;
         Plan plan=(Plan)getItem(position);
+
+        Category category = (Category) getItem(position);
         if(convertView==null){
             convertView=mInflater.inflate(R.layout.adapter_plan_item,parent,false);
             holder=new ViewHolder(convertView);
@@ -67,8 +72,9 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         }
         holder.subjectTextView.setText(plan.getSubject());
 
-        holder.dateTextView.setText("++"+categoryDetail.getPlan()+"2"+"#");
+       // holder.dateTextView.setText("+id+"+category.getRid()+"2"+"#");
       // holder.dateTextView.setText(plan.getPlanNow()+"+"+plan.getConfig()+"+"+plan.getPlan()+"3+"+plan.getRead());//階段計劃描述
+        holder.dateTextView.setText(UserInfo.getUserInfo().getUid()+"X+"+plan.getRead());
 
        // holder.unreadTextView.setText("2"+plan.getPlanNow());//顯示過期時間*/
 

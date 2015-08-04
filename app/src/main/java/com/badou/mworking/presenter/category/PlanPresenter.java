@@ -1,9 +1,12 @@
-package com.badou.mworking.presenter;
+package com.badou.mworking.presenter.category;
 
 import android.content.Context;
 
 import com.badou.mworking.entity.category.Category;
 import com.badou.mworking.entity.category.CategoryDetail;
+import com.badou.mworking.presenter.CommentPresenter;
+import com.badou.mworking.presenter.PlanIntroductionPresenter;
+import com.badou.mworking.presenter.PlanOperationPresenter;
 import com.badou.mworking.presenter.category.CategoryBasePresenter;
 import com.badou.mworking.view.BaseView;
 import com.badou.mworking.view.PlanView;

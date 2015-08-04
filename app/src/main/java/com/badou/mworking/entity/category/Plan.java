@@ -14,7 +14,7 @@ public class Plan extends Category {
    String plan;
 
     public String getPlan (){
-        return "xxxxx";
+        return plan;
     }
 
 

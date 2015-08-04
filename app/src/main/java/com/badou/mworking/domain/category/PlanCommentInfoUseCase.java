@@ -9,23 +9,25 @@ import java.util.List;
 
 import rx.Observable;
 
-public class CategoryGetInfoUseCase  {
+/**
+ * Created by badou1 on 2015/8/4.
+ */
+public class PlanCommentInfoUseCase extends UseCase {
 
-/*
     List<String> rids = new ArrayList<>();
 
+    public void setRids(List<String> rids) {
+        this.rids.clear();
+        this.rids.addAll(rids);
+    }
 
     public void setRid(String rid){
         rids.clear();
         rids.add(rid);
     }
 
-    public CategoryGetInfoUseCase(List<String> ridList) {
-        this.rids = ridList;
-    }
-
     @Override
     protected Observable buildUseCaseObservable() {
-        return RestRepository.getInstance().getResourceInfo(UserInfo.getUserInfo().getUid(), rids);
-    }*/
+        return  RestRepository.getInstance().getResourceInfo(UserInfo.getUserInfo().getUid(), rids);
+    }
 }

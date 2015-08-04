@@ -181,9 +181,6 @@ public class Shuffle {
     @Expose
     private MainIcon buttonEntry;
 
-    /**
-     * 学习计划
-     */
     @SerializedName(BUTTON_PLAN)
     @Expose
     private MainIcon buttonPlan;
