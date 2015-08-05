@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DouXing.iml" filepath="$PROJECT_DIR$/DouXing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Douxing.iml" filepath="$PROJECT_DIR$/Douxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/PseudoMaterialHeader/PseudoMaterialHeader.iml" filepath="$PROJECT_DIR$/PseudoMaterialHeader/PseudoMaterialHeader.iml" />
       <module fileurl="file://$PROJECT_DIR$/Pulltorefresh/Pulltorefresh.iml" filepath="$PROJECT_DIR$/Pulltorefresh/Pulltorefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/QRCodeScan/QRCodeScan.iml" filepath="$PROJECT_DIR$/QRCodeScan/QRCodeScan.iml" />
@@ -11,4 +11,3 @@
     </modules>
   </component>
 </project>
-

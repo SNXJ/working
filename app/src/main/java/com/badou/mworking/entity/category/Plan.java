@@ -10,22 +10,15 @@ import com.google.gson.annotations.SerializedName;
 public class Plan extends Category {
 
     @Expose
-    @SerializedName("plan")//
-   String plan;
-
-    public String getPlan (){
-        return "xxxxx";
-    }
-
-
-    @Expose
     @SerializedName("config")//課程計劃描述
          String config;
+    @Expose
+    @SerializedName("stage")//課程計劃描述
+            String stage;
 
     @Expose
     @SerializedName("now")//課程計劃描述
             String now;
-
 
     //學習計劃描述
     public String getConfig() {
@@ -36,6 +29,9 @@ public class Plan extends Category {
         return now;
     }
 
+    public String getStage() {
+        return stage;
+    }
 
     @Override
     public int getCategoryType() {

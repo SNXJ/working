@@ -21,6 +21,7 @@ public class Net {
                 + AppApplication.appVersion + "&uid=" + uid + "&rid=" + rid;
     }
 
+    //http://115.28.138.79/badou/sync_v2/sys=android&ver=1.6.2&uid=1&type=plain&tag=0&begin=0&limit=10
     public static final String Http_Host_ip = "http://115.28.138.79";
 
     public static String getRunHost() {

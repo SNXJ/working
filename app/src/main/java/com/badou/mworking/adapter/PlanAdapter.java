@@ -25,7 +25,7 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
     }
 
 
-    CategoryDetail categoryDetail=new CategoryDetail();
+  CategoryDetail categoryDetail=new CategoryDetail();
 
 
     @Override
@@ -51,7 +51,7 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         holder.iconImageView.setImageResource(iconResId);
 
         holder.unreadTextView.setTextColor(mContext.getResources().getColor(R.color.color_text_grey));
-       // holder.unreadTextView.setBackgroundColor(mContext.getResources().getColor(R.color.transparent));
+       //holder.unreadTextView.setBackgroundColor(mContext.getResources().getColor(R.color.transparent));
         switch (plan.getRead()) {
             case 0:
                 holder.unreadTextView.setText(R.string.category_expired);
@@ -66,9 +66,8 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
             holder.topImageView.setVisibility(View.INVISIBLE);
         }
         holder.subjectTextView.setText(plan.getSubject());
-
-        holder.dateTextView.setText("++"+categoryDetail.getPlan()+"2"+"#");
-      // holder.dateTextView.setText(plan.getPlanNow()+"+"+plan.getConfig()+"+"+plan.getPlan()+"3+"+plan.getRead());//階段計劃描述
+       // holder.dateTextView.setText("++"+categoryDetail.getPlan()+"2"+"#");
+       holder.dateTextView.setText(plan.getStage());//階段計劃描述
 
        // holder.unreadTextView.setText("2"+plan.getPlanNow());//顯示過期時間*/
 

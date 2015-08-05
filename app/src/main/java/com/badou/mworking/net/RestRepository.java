@@ -313,7 +313,8 @@ public class RestRepository {
     }
 
    public Observable<BaseNetEntity<List<Object>>> getResourceInfo(String uid, List<String> ridList) {
+
         return restApi.getResourceInfo(AppApplication.SYSPARAM, AppApplication.appVersion, uid,
-                new TypedString(GsonUtil.toJson(ridList, new TypeToken<List<String>>(){}.getType())));
+             new TypedString(GsonUtil.toJson(ridList, new TypeToken<List<String>>(){}.getType())));
     }
 }

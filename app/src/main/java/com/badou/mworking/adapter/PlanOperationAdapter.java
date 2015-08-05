@@ -38,11 +38,13 @@ public class PlanOperationAdapter extends MyBaseAdapter<PlanOperation> {
         }
 
         CategoryDetail categoryDetail = getItem(position).getCategoryDetail();
-        holder.mIndexTextView.setText((position + 1) + "");
+       CategoryDetail.Config config=categoryDetail.getPlan().getconfig();
+        holder.mIndexTextView.setText("第"+config.getStages()+"阶段");
+        System.out.print("+++++config.getStages()+++++++" + config.getStages());
+        System.out.print("+++++categoryDetail.getSubject()+++++++" +categoryDetail.getSubject());
+        System.out.print("+++++config.getDesc()+++++++" +config.getDesc());
         holder.mSubjectTextView.setText(categoryDetail.getSubject());
-       holder.mContentTextView.setText(categoryDetail.getTask().getComment());
-
-
+        holder.mContentTextView.setText(config.getSubject()+"XX"+config.getDesc());
         //判断
         holder.mCheckImageView.setImageResource(R.drawable.url);
         return convertView;

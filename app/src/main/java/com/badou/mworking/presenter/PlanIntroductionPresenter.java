@@ -14,7 +14,7 @@ public class PlanIntroductionPresenter  extends Presenter {
 
     PlanIntroductionView mPlanIntroductionView;
     CategoryDetail mCategoryDetail;
-    EnrollUseCase mEnrollUseCase;
+
     String mRid;
 
     public PlanIntroductionPresenter(Context context, String rid) {

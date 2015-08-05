@@ -264,7 +264,7 @@ public class MainPresenter extends Presenter {
             case Shuffle.BUTTON_ENTRY: //报名
                 intent = CategoryListActivity.getIntent(mContext, Category.CATEGORY_ENTRY, false);
                 break;
-            case Shuffle.BUTTON_PLAN: //学习地图
+            case Shuffle.BUTTON_PLAN: //学习计划（地图）
                 intent = CategoryListActivity.getIntent(mContext, Category.CATEGORY_PLAN, false);
                 break;
         }

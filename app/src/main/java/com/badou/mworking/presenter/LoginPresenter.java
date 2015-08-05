@@ -12,6 +12,7 @@ import com.badou.mworking.base.AppApplication;
 import com.badou.mworking.domain.LoginUseCase;
 import com.badou.mworking.entity.user.UserInfo;
 import com.badou.mworking.net.BaseSubscriber;
+import com.badou.mworking.util.GsonUtil;
 import com.badou.mworking.util.NetUtils;
 import com.badou.mworking.util.SPHelper;
 import com.badou.mworking.view.BaseView;
@@ -74,16 +75,20 @@ public class LoginPresenter extends Presenter implements BDLocationListener {
         loginUseCase.execute(new BaseSubscriber<UserInfo>(mContext) {
             @Override
             public void onCompleted() {
+                System.out.print("");
                 mLoginView.hideProgressDialog();
             }
 
             @Override
             public void onErrorCode(int code) {
+                System.out.print("");
                 mLoginView.showErrorDialog();
             }
 
             @Override
-            public void onResponseSuccess(UserInfo data) {
+            public void onResponseSuccess(UserInfo data){
+                System.out.print("");
+
                 loginSuccess(account, data);
             }
         });

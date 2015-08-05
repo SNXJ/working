@@ -87,7 +87,7 @@ public interface RestApi {
     Observable<BaseNetEntity<CommentOverall<CategoryComment>>> getCategoryComment(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @retrofit.http.Body CategoryCommentGetUseCase.Body body);
 
     @POST("/comment")
-    Observable<BaseNetEntity> sendCategoryComment(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Query(PARAMS_UID) String uid, @Query("rid") String rid, @retrofit.http.Body TypedString comment);
+    Observable<BaseNetEntity> sendCategoryComment(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Query(PARAMS_UID) String uid, @Query("rid") String rid, @retrofit.http.Body  TypedString comment);
 
     @POST("/comment")
     Observable<BaseNetEntity> sendCategoryComment(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Query(PARAMS_UID) String uid, @Query("rid") String rid, @Query("whom") String whom, @retrofit.http.Body TypedString comment);
@@ -95,7 +95,7 @@ public interface RestApi {
     @POST("/credit")
     Observable<BaseNetEntity> rateCategory(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Query(PARAMS_UID) String uid, @Query("rid") String rid, @Query("credit") int credit);
 
-    @POST("/viewres")
+    @POST("/viewres") //获取资源详情
     Observable<BaseNetEntity<CategoryDetail>> getCategoryDetail(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @retrofit.http.Body CategoryDetailUseCase.Body body);
 
     @GET("/search")
@@ -122,7 +122,7 @@ public interface RestApi {
     @POST("/checkin_qr")
     Observable<BaseNetEntity> taskSign(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Body TaskSignUseCase.Body body);
 
-    @POST("/enroll")
+    @POST("/enroll")//报名请求的  in  or   out
     Observable<BaseNetEntity> enroll(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @retrofit.http.Body EnrollUseCase.Body body);
 
     @POST("/genhxgrp")
@@ -218,7 +218,7 @@ public interface RestApi {
     @POST("/gethxtxl")
     Observable<BaseNetEntity<ContactList>> getEmchatList(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version, @Body EmchatListGetUseCase.Body body);
 
-    @POST("/getresinfo")
+    @POST("/getresinfo")                                             //@Query(PARAMS_UID) String uid, @Query("page_no") int pageNum, @Query("item_per_page")
     Observable<BaseNetEntity<List<Object>>> getResourceInfo(@Query(PARAMS_SYSTEM) String system, @Query(PARAMS_VERSION) String version,@Query(PARAMS_UID) String uid, @Body TypedString body);
 
 

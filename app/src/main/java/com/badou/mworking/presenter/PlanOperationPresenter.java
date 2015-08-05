@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.badou.mworking.domain.UseCase;
 import com.badou.mworking.domain.category.CategoryDetailUseCase;
+import com.badou.mworking.domain.category.PlanOperationUsecase;
 import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.entity.category.EntryOperation;
 import com.badou.mworking.entity.category.PlanOperation;

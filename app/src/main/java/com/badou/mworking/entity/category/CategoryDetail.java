@@ -48,6 +48,12 @@ public class CategoryDetail implements Serializable, StoreItem {
     @SerializedName("plan")//
     Plan plan;
 
+    public Plan getPlan() {
+        return plan;
+    }
+
+
+
     // 为了保证在传递categoryDetail的过程中，对content的修改不丢失，所以给他添加一个字段。
     // 主要是由于contentStr的格式错误才会有现在这个麻烦
     @SerializedName("contentclass")
@@ -153,18 +159,81 @@ public class CategoryDetail implements Serializable, StoreItem {
     public static class Plan implements Serializable {
 
         @SerializedName("config")
-        String config;
-        @SerializedName("now")
-        String now;//计划简介
-        public  String getConfig (){
+        Config config;
+        public Config getconfig() {
             return config;
         }
-        public  String getNow() {
-
-            return now;
-            }
-
     }
+
+    public static class Config implements Serializable {
+        @SerializedName("offline")
+        String offline;
+        @SerializedName("deadline")
+        String deadline;
+        @SerializedName("startline")
+        String startline;
+        @SerializedName("subject")
+        String subject;
+        @SerializedName("desc")
+        String desc;
+        @SerializedName("stages")
+        Stage stages;
+
+
+        public String getOffline() {
+            return offline;
+        }
+        public String getDeadline() {
+            return deadline;
+        }
+
+        public String getStartline() {
+            return startline;
+        }
+
+        public String getSubject() {
+            return subject;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        public Stage getStages() {
+            return stages;
+        }
+    }
+    //阶段
+    public static class Stage implements Serializable {
+        @SerializedName("phase")
+        int phase;
+        @SerializedName("subject")
+        int subject;
+        @SerializedName("desc")
+        int desc;
+        @SerializedName("link")
+        int link;
+
+        public int getPhase() {
+            return phase;
+        }
+
+        public int getSubject() {
+            return subject;
+        }
+
+        public int getDesc() {
+            return desc;
+        }
+        //这个需要改
+        public int getLink() {
+            return link;
+        }
+    }
+
+
+
+
 
     public static class Task implements Serializable {
         @SerializedName("offline")
@@ -252,9 +321,7 @@ public class CategoryDetail implements Serializable, StoreItem {
         return entry;
     }
 
-    public Plan getPlan() {
-        return plan;
-    }
+
 
     public int getRating() {
         return getContent().e;

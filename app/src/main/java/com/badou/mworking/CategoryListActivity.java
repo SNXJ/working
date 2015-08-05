@@ -26,6 +26,7 @@ import com.badou.mworking.entity.category.Classification;
 import com.badou.mworking.presenter.category.CategoryListPresenter;
 import com.badou.mworking.presenter.category.ExamListPresenter;
 import com.badou.mworking.presenter.Presenter;
+import com.badou.mworking.presenter.category.PlanListPresenter;
 import com.badou.mworking.presenter.category.TrainingListPresenter;
 import com.badou.mworking.util.DensityUtil;
 import com.badou.mworking.view.category.CategoryListView;
@@ -100,6 +101,8 @@ public class CategoryListActivity extends BaseBackActionBarActivity implements C
                 return new TrainingListPresenter(mContext, mCategoryIndex);
             case Category.CATEGORY_EXAM:
                 return new ExamListPresenter(mContext, mCategoryIndex);
+            case Category.CATEGORY_PLAN:
+               // return new PlanListPresenter(mContext, mCategoryIndex);
             default:
                 return new CategoryListPresenter(mContext, mCategoryIndex);
         }
