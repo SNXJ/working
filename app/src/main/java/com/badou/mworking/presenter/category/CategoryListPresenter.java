@@ -85,7 +85,7 @@ public class CategoryListPresenter extends ListPresenter<Category> {
 
     // 功能描述:通过网络获取 类别 列表
     private void getClassifications() {
-        mCategoryListView.setMainClassification(SPHelper.getClassification(Category.CATEGORY_KEY_NAMES[mCategoryIndex]));
+         mCategoryListView.setMainClassification(SPHelper.getClassification(Category.CATEGORY_KEY_NAMES[mCategoryIndex]));
         new ClassificationUseCase(Category.CATEGORY_KEY_NAMES[mCategoryIndex]).execute(new BaseSubscriber<List<Classification>>(mContext) {
             @Override
             public void onResponseSuccess(List<Classification> data) {

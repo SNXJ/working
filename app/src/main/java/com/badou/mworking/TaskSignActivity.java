@@ -3,8 +3,10 @@ package com.badou.mworking;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,8 +14,10 @@ import com.badou.mworking.entity.category.Category;
 import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.presenter.Presenter;
 import com.badou.mworking.presenter.category.TaskSignPresenter;
+import com.badou.mworking.util.BitmapUtil;
 import com.badou.mworking.util.ImageChooser;
 import com.badou.mworking.util.TimeTransfer;
+import com.badou.mworking.util.ToastUtil;
 import com.badou.mworking.view.category.TaskSignView;
 import com.baidu.location.BDLocation;
 import com.baidu.mapapi.map.BaiduMap;
@@ -53,6 +57,10 @@ public class TaskSignActivity extends CategoryBaseActivity implements TaskSignVi
     @Bind(R.id.self_position_layout)
     LinearLayout mSelfPositionLayout;
 
+    @Bind(R.id.task_image)
+    ImageView taskImage;
+
+
     TaskSignPresenter mPresenter;
     ImageChooser mImageChooser;
 
@@ -72,7 +80,10 @@ public class TaskSignActivity extends CategoryBaseActivity implements TaskSignVi
         mPresenter = (TaskSignPresenter) super.mPresenter;
         mPresenter.attachView(this);
         initListener();
+
     }
+
+
 
 
     @Override
@@ -90,12 +101,22 @@ public class TaskSignActivity extends CategoryBaseActivity implements TaskSignVi
         mPresenter.toMyPosition();
     }
 
+@OnClick(R.id.task_image)
+void ontaskImage(){
+    ToastUtil.showToast(this,"点击看放大图");
+}
+
+
+
     private void initListener() {
+        //拍照相关操作？
         mImageChooser = new ImageChooser(mContext, false, true, false);
         mImageChooser.setOnImageChosenListener(new ImageChooser.OnImageChosenListener() {
             @Override
             public void onImageChosen(Bitmap bitmap, int type) {
                 mPresenter.onImageChosen(bitmap);
+
+                taskImage.setImageBitmap( mImageChooser.getBitmap());
             }
         });
     }
@@ -171,6 +192,8 @@ public class TaskSignActivity extends CategoryBaseActivity implements TaskSignVi
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         mImageChooser.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+
+
     }
 
     @Override

@@ -11,6 +11,7 @@ import org.apache.commons.codec.binary.Base64;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Calendar;
+import java.util.List;
 
 public class CategoryDetail implements Serializable, StoreItem {
 
@@ -79,7 +80,7 @@ public class CategoryDetail implements Serializable, StoreItem {
     }
 
     public static class Entry implements Serializable {
-        @SerializedName("offline")
+        @SerializedName("offline")//bu
         int offline;
         @SerializedName("maxusr")
         int maxusr;
@@ -177,7 +178,7 @@ public class CategoryDetail implements Serializable, StoreItem {
         @SerializedName("desc")
         String desc;
         @SerializedName("stages")
-        Stage stages;
+        List<Stage> stages; // 这个是JsonArray
 
 
         public String getOffline() {
@@ -199,7 +200,7 @@ public class CategoryDetail implements Serializable, StoreItem {
             return desc;
         }
 
-        public Stage getStages() {
+        public List<Stage> getStages() {
             return stages;
         }
     }

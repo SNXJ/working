@@ -8,6 +8,7 @@
     android:padding="@dimen/offset_medium">
 
     <TextView
+
         android:id="@+id/index_text_view"
         android:layout_width="@dimen/icon_size_tiny"
         android:layout_height="@dimen/icon_size_tiny"

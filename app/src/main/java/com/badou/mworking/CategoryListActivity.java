@@ -101,8 +101,8 @@ public class CategoryListActivity extends BaseBackActionBarActivity implements C
                 return new TrainingListPresenter(mContext, mCategoryIndex);
             case Category.CATEGORY_EXAM:
                 return new ExamListPresenter(mContext, mCategoryIndex);
-            case Category.CATEGORY_PLAN:
-               // return new PlanListPresenter(mContext, mCategoryIndex);
+            // case Category.CATEGORY_PLAN:
+            // return new PlanListPresenter(mContext, mCategoryIndex);
             default:
                 return new CategoryListPresenter(mContext, mCategoryIndex);
         }
@@ -174,7 +174,7 @@ public class CategoryListActivity extends BaseBackActionBarActivity implements C
     }
 
     private void initListView() {
-
+//这个？？？
         mCategoryAdapter = CategoryAdapterFactory.getAdapter(mContext, mCategoryIndex);
 
         mContentListView.setAdapter(mCategoryAdapter);

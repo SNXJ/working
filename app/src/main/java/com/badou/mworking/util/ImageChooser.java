@@ -137,7 +137,7 @@ public class ImageChooser {
 
     }
 
-    private void choosePhoto() {
+    public  void choosePhoto() {
         Intent intentFromGallery = new Intent();
         intentFromGallery.setType("image/*"); // 设置文件类型
 
@@ -175,6 +175,18 @@ public class ImageChooser {
         ((Activity) mContext).startActivityForResult(intentFromCapture,
                 CAMERA_REQUEST_CODE);
     }
+
+
+
+
+   // 获取处理后的bitmap对象
+    public  Bitmap  getBitmap(){
+        File file = new File(mContext.getExternalCacheDir().getAbsolutePath() + File.separator + "temp.jpg");
+        Bitmap bitmap = BitmapUtil.decodeSampledBitmapFromFile(file.getAbsolutePath(), 120, 160);
+        return bitmap;
+    }
+
+
 
     /**
      * 功能描述: 摄像
@@ -221,6 +233,7 @@ public class ImageChooser {
                         if (bitmap != bitmap2 && !bitmap.isRecycled())
                             bitmap.recycle();
                         if (isZoom) {
+                            //
                             startPhotoZoom(Uri.fromFile(file));
                         } else {
                             if (mOnImageChosenListener != null) {

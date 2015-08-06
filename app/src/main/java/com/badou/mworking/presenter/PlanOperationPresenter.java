@@ -6,9 +6,7 @@ import android.text.TextUtils;
 
 import com.badou.mworking.domain.UseCase;
 import com.badou.mworking.domain.category.CategoryDetailUseCase;
-import com.badou.mworking.domain.category.PlanOperationUsecase;
 import com.badou.mworking.entity.category.CategoryDetail;
-import com.badou.mworking.entity.category.EntryOperation;
 import com.badou.mworking.entity.category.PlanOperation;
 import com.badou.mworking.net.BaseSubscriber;
 import com.badou.mworking.factory.CategoryIntentFactory;
@@ -45,7 +43,7 @@ public class PlanOperationPresenter  extends ListPresenter<PlanOperation> {
 
     @Override
     protected Type getType() {
-        return new TypeToken<List<EntryOperation>>() {
+        return new TypeToken<List<PlanOperation>>() {
         }.getType();
     }
 
@@ -71,18 +69,20 @@ public class PlanOperationPresenter  extends ListPresenter<PlanOperation> {
         mFragment.startActivityForResult(CategoryIntentFactory.getIntent(mContext, data.getCategoryDetail().getFmt(), data.getRid()), REQUEST_DETAIL);
     }
 
+    // 这个是Activity的presenter调用的
     public void setData(CategoryDetail categoryDetail) {
         if (TextUtils.isEmpty(categoryDetail.getLink_to()))
             return;
         this.mCategoryDetail = categoryDetail;
-        new CategoryDetailUseCase(mCategoryDetail.getLink_to()).execute(new BaseSubscriber<CategoryDetail>(mContext) {
+        //  直接用这个detail就可以了
+/*        new CategoryDetailUseCase(mCategoryDetail.getLink_to()).execute(new BaseSubscriber<CategoryDetail>(mContext) {
             @Override
             public void onResponseSuccess(final CategoryDetail data) {
                 mPlanOperationView.addData(new ArrayList<PlanOperation>() {{
                     add(new PlanOperation(mCategoryDetail.getLink_to(), data));
                 }});
             }
-        });
+        });*/
     }
 }
 

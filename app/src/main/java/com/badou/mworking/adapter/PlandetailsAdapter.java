@@ -23,12 +23,6 @@ public class PlandetailsAdapter extends MyBaseAdapter<Category> {
     }
 
     @Override
-    public int getListCount() {
-        return 1;
-    }
-
-
-    @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         ViewHolder holder;
         if (convertView == null) {

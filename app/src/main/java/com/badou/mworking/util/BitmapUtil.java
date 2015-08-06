@@ -16,6 +16,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
+import android.widget.ImageView;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -33,6 +34,8 @@ import java.net.URL;
  * 功能描述: 图片处理工具类
  */
 public class BitmapUtil {
+
+
 
     public static void recycleBitmap(Bitmap bitmap) {
         if (bitmap != null && !bitmap.isRecycled()) {

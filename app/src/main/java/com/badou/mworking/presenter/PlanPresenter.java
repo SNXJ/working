@@ -5,6 +5,7 @@ import android.content.Context;
 import com.badou.mworking.entity.category.Category;
 import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.presenter.category.CategoryBasePresenter;
+import com.badou.mworking.util.GsonUtil;
 import com.badou.mworking.view.BaseView;
 import com.badou.mworking.view.PlanView;
 
@@ -37,9 +38,10 @@ public class PlanPresenter  extends CategoryBasePresenter {
 
     @Override
     public void setData(CategoryDetail categoryDetail) {
+        GsonUtil.toJson("in detail: "+categoryDetail);
         super.setData(categoryDetail);
         mPlanIntroductionPresenter.setData(categoryDetail);
-        mPlanIntroductionPresenter.setData(categoryDetail);
+        mPlanOperationPresenter.setData(categoryDetail); // 这个打错了吧
         if (categoryDetail.getEntry().getIn() == 2) {
             mPlanView.setSwipeEnable(true);
         } else {

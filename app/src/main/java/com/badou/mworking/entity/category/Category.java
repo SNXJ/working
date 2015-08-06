@@ -153,6 +153,10 @@ public abstract class Category implements Serializable {
         this.read = isRead ? 1 : 0;
     }
 
+    public String getType() {
+        return type;
+    }
+
     public String getClassificationName() {
         return getClassificationName(getCategoryType(), Integer.parseInt(tag));
     }

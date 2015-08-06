@@ -12,6 +12,7 @@ import com.badou.mworking.base.MyBaseAdapter;
 import com.badou.mworking.entity.category.Category;
 import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.entity.category.Plan;
+import com.badou.mworking.util.GsonUtil;
 import com.badou.mworking.util.TimeTransfer;
 
 /**
@@ -23,10 +24,6 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
     public PlanAdapter(Context context){
         super(context);
     }
-
-
-  CategoryDetail categoryDetail=new CategoryDetail();
-
 
     @Override
     public View getView(int position,View convertView,ViewGroup parent){
@@ -65,13 +62,13 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         }else{
             holder.topImageView.setVisibility(View.INVISIBLE);
         }
-        holder.subjectTextView.setText(plan.getSubject());
+        holder.subjectTextView.setText(plan.getSubject());//现在这些都没有？
        // holder.dateTextView.setText("++"+categoryDetail.getPlan()+"2"+"#");
-       holder.dateTextView.setText(plan.getStage());//階段計劃描述
-
+       holder.dateTextView.setText(plan.getStage()+"X"+plan.getType());//階段計劃描述
+      //  plan.getType()为什么没有值
        // holder.unreadTextView.setText("2"+plan.getPlanNow());//顯示過期時間*/
 
-       holder.unreadTextView.setText("20%");
+       holder.unreadTextView.setText("剩余:天结束");
 
         //holder.dateTextView.setText(TimeTransfer.long2StringDetailDate(mContext, plan.getTime()));
         return convertView;
