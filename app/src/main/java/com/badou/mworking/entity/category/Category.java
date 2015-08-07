@@ -104,6 +104,7 @@ public abstract class Category implements Serializable {
     }
 
     public boolean isOffline() {
+
         return offline == 1;
     }
 

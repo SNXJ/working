@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.badou.mworking.adapter.PlandetailsAdapter;
 import com.badou.mworking.base.BaseBackActionBarActivity;
+import com.badou.mworking.entity.category.Plan;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,7 +33,8 @@ public class PlandetailsActivity extends BaseBackActionBarActivity {
     }
 
     private void initData() {
-        planTopTitle.setText("标题标题");
+        Plan  plan= new Plan();
+        planTopTitle.setText(plan.getStage());
         planTopDetail.setText("android:text=\"XtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtu" +
                 "yXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXX\"");
         PlandetailsAdapter adapter = new PlandetailsAdapter(PlandetailsActivity.this);

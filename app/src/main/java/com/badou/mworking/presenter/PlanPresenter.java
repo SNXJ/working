@@ -41,7 +41,7 @@ public class PlanPresenter  extends CategoryBasePresenter {
         GsonUtil.toJson("in detail: "+categoryDetail);
         super.setData(categoryDetail);
         mPlanIntroductionPresenter.setData(categoryDetail);
-        mPlanOperationPresenter.setData(categoryDetail); // 这个打错了吧
+        mPlanOperationPresenter.setData(categoryDetail); // 这个打错了
         if (categoryDetail.getEntry().getIn() == 2) {
             mPlanView.setSwipeEnable(true);
         } else {

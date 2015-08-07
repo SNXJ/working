@@ -24,6 +24,7 @@ public class Plan extends Category {
         return Category.CATEGORY_PLAN;
     }
 
+
     @Override
     public void updateData(CategoryDetail categoryDetail) {
         this.store = categoryDetail.store;
