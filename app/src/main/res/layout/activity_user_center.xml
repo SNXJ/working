@@ -187,58 +187,7 @@
                         android:src="@drawable/icon_user_center_forward" />
                 </LinearLayout>
 
-<!--
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/color_bg_grey" />
 
-                <LinearLayout
-                    android:id="@+id/my_message_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/background_white_grey"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingBottom="@dimen/offset_lless"
-                    android:paddingLeft="@dimen/offset_small"
-                    android:paddingTop="@dimen/offset_lless">
-
-                    <ImageView
-                        android:layout_width="@dimen/user_center_icon_content"
-                        android:layout_height="@dimen/user_center_icon_content"
-                        android:src="@drawable/icon_user_center_message" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/offset_less"
-                        android:layout_weight="1.0"
-                        android:text="@string/user_center_message"
-                        android:textColor="@color/color_text_black"
-                        android:textSize="@dimen/text_size_medium" />
-
-                    <TextView
-                        android:id="@+id/message_number_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/offset_less"
-                        android:background="@drawable/icon_chat_unread"
-                        android:gravity="center"
-                        android:paddingBottom="1dp"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="1dp"
-                        android:textColor="@color/color_white"
-                        android:textSize="@dimen/text_size_less"
-                        android:visibility="gone" />
-
-                    <ImageView
-                        android:layout_width="@dimen/user_center_icon_forward_width"
-                        android:layout_height="@dimen/user_center_icon_forward_height"
-                        android:src="@drawable/icon_user_center_forward" />
-                </LinearLayout>
--->
 
                 <View
                     android:layout_width="match_parent"
@@ -283,6 +232,95 @@
                         android:layout_height="@dimen/user_center_icon_forward_height"
                         android:src="@drawable/icon_user_center_forward" />
                 </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_bg_grey" />
+
+                <LinearLayout
+                    android:id="@+id/my_score_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_white_grey"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_lless"
+                    android:paddingLeft="@dimen/offset_small"
+                    android:paddingTop="@dimen/offset_lless">
+
+                    <ImageView
+                        android:layout_width="@dimen/user_center_icon_content"
+                        android:layout_height="@dimen/user_center_icon_content"
+                        android:src="@drawable/icon_user_center_score" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_less"
+                        android:layout_weight="1.0"
+                        android:text="@string/user_center_score"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/score_number_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/offset_less"
+                        android:background="@drawable/icon_chat_unread"
+                        android:gravity="center"
+                        android:paddingBottom="1dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="1dp"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_less"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="@dimen/user_center_icon_forward_width"
+                        android:layout_height="@dimen/user_center_icon_forward_height"
+                        android:src="@drawable/icon_user_center_forward" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_bg_grey" />
+
+                <LinearLayout
+                    android:id="@+id/service_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_white_grey"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_lless"
+                    android:paddingLeft="@dimen/offset_small"
+                    android:paddingTop="@dimen/offset_lless">
+
+                    <ImageView
+                        android:layout_width="@dimen/user_center_icon_content"
+                        android:layout_height="@dimen/user_center_icon_content"
+                        android:src="@drawable/icon_user_center_service" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_less"
+                        android:layout_weight="1"
+                        android:text="@string/user_center_service"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <ImageView
+                        android:layout_width="@dimen/user_center_icon_forward_width"
+                        android:layout_height="@dimen/user_center_icon_forward_height"
+                        android:src="@drawable/icon_user_center_forward" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -329,9 +367,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/color_bg_grey" />
-
+<!--微調研-->
                 <LinearLayout
-                    android:id="@+id/service_layout"
+                    android:id="@+id/user_center_survey"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_white_grey"
@@ -344,14 +382,14 @@
                     <ImageView
                         android:layout_width="@dimen/user_center_icon_content"
                         android:layout_height="@dimen/user_center_icon_content"
-                        android:src="@drawable/icon_user_center_service" />
+                        android:src="@drawable/icon_user_center_survey" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/offset_less"
                         android:layout_weight="1"
-                        android:text="@string/user_center_service"
+                        android:text="@string/user_center_survey"
                         android:textColor="@color/color_text_black"
                         android:textSize="@dimen/text_size_medium" />
 

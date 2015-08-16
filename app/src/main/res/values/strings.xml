@@ -154,6 +154,7 @@
     <string name="accountManger_logout">退 出 登 录</string>
     <string name="user_center_my_account">我的账号</string>
     <string name="user_center_service">在线客服中心</string>
+    <string name="user_center_survey">意見反馈</string>
     <string name="text_downLoadFile">正在下载文件&#8230;</string>
     <string name="study_fir">进度超过了</string>
     <string name="study_sec">用户</string>
@@ -183,7 +184,7 @@
     <string name="tips_username_input_New_MiMa">新密码格式非法</string>
     <string name="tips_liuliang">当前为省流量模式</string>
     <string name="no_more">没有更多了</string>
-    <string name="user_center_message">我的私信</string>
+    <string name="user_center_score">我的积分</string>
     <string name="dialog_rating_score_one">完全用不上</string>
     <string name="dialog_rating_score_two">看不太明白</string>
     <string name="dialog_rating_score_three">一般吧</string>

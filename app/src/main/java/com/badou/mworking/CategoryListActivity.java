@@ -120,7 +120,7 @@ public class CategoryListActivity extends BaseBackActionBarActivity implements C
     private void initTitleView() {
         if (!mReceivedIntent.getBooleanExtra(KEY_IS_DONE, true) && mCategoryIndex != Category.CATEGORY_ENTRY) {
             mTitleReadTextView = new TextView(mContext);
-            mTitleReadTextView.setText(R.string.category_unread);
+            mTitleReadTextView.setText(R.string.category_unread);//未读
             mTitleReadTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, DensityUtil.getInstance().getTextSizeSmall());
             int paddingLess = DensityUtil.getInstance().getOffsetLess();
             mTitleReadTextView.setPadding(paddingLess, 0, paddingLess, 0);
@@ -174,7 +174,6 @@ public class CategoryListActivity extends BaseBackActionBarActivity implements C
     }
 
     private void initListView() {
-//这个？？？
         mCategoryAdapter = CategoryAdapterFactory.getAdapter(mContext, mCategoryIndex);
 
         mContentListView.setAdapter(mCategoryAdapter);

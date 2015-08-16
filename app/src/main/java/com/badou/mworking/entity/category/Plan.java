@@ -8,17 +8,12 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Plan extends Category {
-
-
     @Expose
-    @SerializedName("stage")//課程計劃描述
+    @SerializedName("stage")//计划阶段
             String stage;
-
-
     public String getStage() {
         return stage;
     }
-
     @Override
     public int getCategoryType() {
         return Category.CATEGORY_PLAN;

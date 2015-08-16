@@ -164,6 +164,7 @@ public class CategoryDetail implements Serializable, StoreItem {
         public Config getconfig() {
             return config;
         }
+        //now字段
     }
 
     public static class Config implements Serializable {
@@ -209,26 +210,24 @@ public class CategoryDetail implements Serializable, StoreItem {
         @SerializedName("phase")
         int phase;
         @SerializedName("subject")
-        int subject;
+        String subject;
         @SerializedName("desc")
-        int desc;
+        String desc;
         @SerializedName("link")
-        int link;
+        List<String> links;
 
         public int getPhase() {
             return phase;
         }
-
-        public int getSubject() {
+        public String  getSubject() {
             return subject;
         }
-
-        public int getDesc() {
+        public String getDesc() {
             return desc;
         }
         //这个需要改
-        public int getLink() {
-            return link;
+        public List<String> getLink() {
+            return links;
         }
     }
 

@@ -133,6 +133,14 @@ public class BitmapUtil {
 
     public static int calculateRatio(int orgWidth, int orgHeight, int reqWidth,
                                      int reqHeight) {
+       /*//橫屏圖片  寬高互換
+        if(orgWidth>orgHeight){
+           int temp=orgHeight;
+            orgHeight=orgWidth;
+            orgWidth= temp;
+        }*/
+
+
         // 源图片的高度和宽度
         int ratio = 1;
         if (orgHeight > reqHeight || orgWidth > reqWidth) {
@@ -145,7 +153,9 @@ public class BitmapUtil {
             // 一定都会大于等于目标的宽和高。
             ratio = heightRatio < widthRatio ? heightRatio : widthRatio;
         }
+
         return ratio;
+
     }
 
     /**

@@ -143,13 +143,13 @@
             android:textSize="@dimen/text_size_large" />
         <ImageView
             android:clickable="true"
+            android:scaleType="centerCrop"
             android:id="@+id/task_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="@dimen/layout_size_activity_task_sign_bottom"
             android:paddingBottom="3dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
             android:paddingTop="3dp"
-            android:background="#00ff00"
             android:layout_alignTop="@+id/bottom_layout"
             android:layout_alignParentRight="true"
             />

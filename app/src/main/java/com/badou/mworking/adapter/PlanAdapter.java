@@ -46,30 +46,15 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         // 图标资源，默认为已读
         int iconResId=R.drawable.plan_default;
         holder.iconImageView.setImageResource(iconResId);
-
-        holder.unreadTextView.setTextColor(mContext.getResources().getColor(R.color.color_text_grey));
+        //holder.unreadTextView.setTextColor(mContext.getResources().getColor(R.color.color_text_grey));
        //holder.unreadTextView.setBackgroundColor(mContext.getResources().getColor(R.color.transparent));
-        switch (plan.getRead()) {
-            case 0:
-                holder.unreadTextView.setText(R.string.category_expired);
-                break;
-            case 1:
-                holder.unreadTextView.setText("已完成");
-        }
-
         if(plan.isTop()){
             holder.topImageView.setVisibility(View.VISIBLE);
         }else{
             holder.topImageView.setVisibility(View.INVISIBLE);
         }
         holder.subjectTextView.setText(plan.getSubject());//
-       // holder.dateTextView.setText("++"+categoryDetail.getPlan()+"2"+"#");
        holder.dateTextView.setText(plan.getStage());//階段計劃描述
-       // holder.unreadTextView.setText("2"+plan.getPlanNow());//顯示過期時間*/
-
-       holder.unreadTextView.setText("剩余:"+9+"天结束");
-
-        //holder.dateTextView.setText(TimeTransfer.long2StringDetailDate(mContext, plan.getTime()));
         return convertView;
     }
 
@@ -77,7 +62,7 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
         TextView subjectTextView;
         TextView dateTextView;
         ImageView iconImageView;
-        TextView unreadTextView;
+       // TextView unreadTextView;
         ImageView topImageView;
 
         public ViewHolder(View view) {
@@ -85,7 +70,7 @@ public class PlanAdapter extends MyBaseAdapter<Category> {
             subjectTextView = (TextView) view.findViewById(R.id.tv_adapter_notice_subject);//大標題
             dateTextView = (TextView) view.findViewById(R.id.tv_adapter_notice_date);//小標題
             iconImageView = (ImageView) view.findViewById(R.id.iv_adapter_notice_icon);//圖標
-            unreadTextView = (TextView) view.findViewById(R.id.tv_adapter_notice_unread);//狀態
+           // unreadTextView = (TextView) view.findViewById(R.id.tv_adapter_notice_unread);//狀態
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.badou.mworking.presenter;
+package com.badou.mworking.presenter.category;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -7,9 +7,11 @@ import android.text.TextUtils;
 import com.badou.mworking.domain.UseCase;
 import com.badou.mworking.domain.category.CategoryDetailUseCase;
 import com.badou.mworking.entity.category.CategoryDetail;
+import com.badou.mworking.entity.category.EntryOperation;
 import com.badou.mworking.entity.category.PlanOperation;
 import com.badou.mworking.net.BaseSubscriber;
 import com.badou.mworking.factory.CategoryIntentFactory;
+import com.badou.mworking.presenter.ListPresenter;
 import com.badou.mworking.view.BaseView;
 import com.badou.mworking.view.PlanOperationView;
 import com.google.gson.reflect.TypeToken;
@@ -69,20 +71,13 @@ public class PlanOperationPresenter  extends ListPresenter<PlanOperation> {
         mFragment.startActivityForResult(CategoryIntentFactory.getIntent(mContext, data.getCategoryDetail().getFmt(), data.getRid()), REQUEST_DETAIL);
     }
 
-    // 这个是Activity的presenter调用的
-    public void setData(CategoryDetail categoryDetail) {
-        if (TextUtils.isEmpty(categoryDetail.getLink_to()))
-            return;
-        this.mCategoryDetail = categoryDetail;
-        //  直接用这个detail就可以了
-/*        new CategoryDetailUseCase(mCategoryDetail.getLink_to()).execute(new BaseSubscriber<CategoryDetail>(mContext) {
-            @Override
-            public void onResponseSuccess(final CategoryDetail data) {
-                mPlanOperationView.addData(new ArrayList<PlanOperation>() {{
-                    add(new PlanOperation(mCategoryDetail.getLink_to(), data));
-                }});
-            }
-        });*/
-    }
+     public void setData(final CategoryDetail categoryDetail) {
+         this.mCategoryDetail = categoryDetail;
+         mPlanOperationView.addData(new ArrayList<PlanOperation>() {{
+             add(new PlanOperation(mCategoryDetail.getLink_to(), categoryDetail));
+         }});
+
+     }
+
 }
 

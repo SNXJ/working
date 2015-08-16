@@ -3,6 +3,8 @@ package com.badou.mworking.presenter.category;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
 
 import com.badou.mworking.BackWebActivity;
 import com.badou.mworking.CommentActivity;
@@ -17,6 +19,7 @@ import com.badou.mworking.entity.user.UserInfo;
 import com.badou.mworking.net.BaseSubscriber;
 import com.badou.mworking.net.Net;
 import com.badou.mworking.presenter.Presenter;
+import com.badou.mworking.util.ToastUtil;
 import com.badou.mworking.view.BaseView;
 import com.badou.mworking.view.category.CategoryBaseView;
 import com.badou.mworking.widget.RatingDialog;
@@ -100,13 +103,12 @@ public class CategoryBasePresenter extends Presenter {
     }
 
     public void onPlanDatile() {
-        mCategoryBaseView.showToast("跳转计划转详情面");
-        String titleStr = mContext.getResources().getString(R.string.statistical_data);
-        String uid = UserInfo.getUserInfo().getUid();
-        String url = Net.getRunHost() + Net.getTongji(uid, mRid);
+
         Intent intent = new Intent(mContext, PlandetailsActivity.class);//
-       // intent.putExtra(PlandetailsActivity.KEY_URL, url);
-        //intent.putExtra(PlandetailsActivity.KEY_TITLE, titleStr);
+       //传递对象
+        Bundle bundle= new Bundle();
+        bundle.putSerializable("CategoryDetail",mCategoryDetail);
+        intent.putExtras(bundle);
         mContext.startActivity(intent);
     }
 

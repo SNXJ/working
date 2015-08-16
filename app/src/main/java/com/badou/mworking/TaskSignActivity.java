@@ -103,7 +103,9 @@ public class TaskSignActivity extends CategoryBaseActivity implements TaskSignVi
 
 @OnClick(R.id.task_image)
 void ontaskImage(){
-    ToastUtil.showToast(this,"点击看放大图");
+    //大圖
+    Intent   intent = new Intent(this,TaskSignImageActivity.class);
+    startActivity(intent);
 }
 
 

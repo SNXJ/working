@@ -189,4 +189,6 @@ public abstract class Category implements Serializable {
     }
 
     public abstract void updateData(CategoryDetail categoryDetail);
+
+
 }

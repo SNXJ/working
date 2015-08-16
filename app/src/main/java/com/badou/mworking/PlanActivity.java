@@ -13,8 +13,9 @@ import com.badou.mworking.fragment.CommentFragment;
 import com.badou.mworking.fragment.PlanIntroductionFragment;
 import com.badou.mworking.fragment.PlanOperationFragment;
 import com.badou.mworking.presenter.ListPresenter;
-import com.badou.mworking.presenter.PlanPresenter;
 import com.badou.mworking.presenter.Presenter;
+import com.badou.mworking.presenter.category.PlanPresenter;
+import com.badou.mworking.util.ToastUtil;
 import com.badou.mworking.view.PlanView;
 import com.badou.mworking.widget.CategoryHeader;
 import com.badou.mworking.widget.CategoryTabContent;
@@ -66,7 +67,7 @@ public class PlanActivity extends BaseNoTitleActivity implements PlanView {
         list.add(operationFragment);
         list.add(commentFragment);
         mContent.setList(list);
-        mContent.setSwipeEnabled(true);//hua
+        mContent.setSwipeEnabled(true);
         mPresenter = (PlanPresenter) super.mPresenter;
         mContent.postDelayed(new Runnable() {
             @Override
@@ -156,10 +157,6 @@ public class PlanActivity extends BaseNoTitleActivity implements PlanView {
         mStoreImageView.setImageResource(isStore ? R.drawable.button_title_store_round_checked : R.drawable.button_title_store_round_unchecked);
     }
 
-    @Override
-    public void setSwipeEnable(boolean isEnable) {
-        mContent.setSwipeEnabled(isEnable);
-    }
 }
 
 

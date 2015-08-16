@@ -1,11 +1,13 @@
 package com.badou.mworking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.badou.mworking.adapter.PlandetailsAdapter;
 import com.badou.mworking.base.BaseBackActionBarActivity;
+import com.badou.mworking.entity.category.CategoryDetail;
 import com.badou.mworking.entity.category.Plan;
 
 import butterknife.Bind;
@@ -33,15 +35,13 @@ public class PlandetailsActivity extends BaseBackActionBarActivity {
     }
 
     private void initData() {
-        Plan  plan= new Plan();
-        planTopTitle.setText(plan.getStage());
-        planTopDetail.setText("android:text=\"XtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtu" +
-                "yXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXXXtrhtuyXXXXXXXXXXX\"");
-        PlandetailsAdapter adapter = new PlandetailsAdapter(PlandetailsActivity.this);
+        Intent intent= this.getIntent();
+        CategoryDetail categoryDetail= (CategoryDetail)intent.getSerializableExtra("CategoryDetail");
+
+        planTopTitle.setText(categoryDetail.getPlan().getconfig().getSubject());
+        planTopDetail.setText(categoryDetail.getPlan().getconfig().getDesc());
+
+        PlandetailsAdapter adapter = new PlandetailsAdapter(categoryDetail,PlandetailsActivity.this);
         listviewPaln.setAdapter(adapter);
-
     }
-
-
-
 }

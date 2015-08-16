@@ -13,7 +13,7 @@ import com.badou.mworking.R;
 import com.badou.mworking.adapter.PlanOperationAdapter;
 import com.badou.mworking.base.BaseFragment;
 import com.badou.mworking.entity.category.PlanOperation;
-import com.badou.mworking.presenter.PlanOperationPresenter;
+import com.badou.mworking.presenter.category.PlanOperationPresenter;
 import com.badou.mworking.util.DensityUtil;
 import com.badou.mworking.view.PlanOperationView;
 import com.badou.mworking.widget.CategoryTabContent;
@@ -53,7 +53,6 @@ public class PlanOperationFragment extends BaseFragment implements PlanOperation
         ButterKnife.bind(this, view);
         initView();
         Bundle argument = getArguments();
-
         mPresenter = new PlanOperationPresenter(mContext, this, argument.getString(KEY_RID));
         mPresenter.attachView(this);
         return view;
@@ -69,7 +68,6 @@ public class PlanOperationFragment extends BaseFragment implements PlanOperation
         divider.setBackgroundColor(getResources().getColor(R.color.color_border_grey));
         header.addView(divider);
         mContentListView.addHeaderView(header);
-
         mPlanOperationAdapter = new PlanOperationAdapter(mContext);
         mContentListView.setAdapter(mPlanOperationAdapter);
     }
@@ -178,7 +176,7 @@ public class PlanOperationFragment extends BaseFragment implements PlanOperation
 
     @Override
     public String getTitle() {
-        return "课程简介";
+        return "课程列表";
     }
 
     @Override

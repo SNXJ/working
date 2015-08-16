@@ -24,6 +24,8 @@ import com.badou.mworking.R;
 import com.badou.mworking.VideoTakeActivity;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -182,12 +184,18 @@ public class ImageChooser {
    // 获取处理后的bitmap对象
     public  Bitmap  getBitmap(){
         File file = new File(mContext.getExternalCacheDir().getAbsolutePath() + File.separator + "temp.jpg");
-        Bitmap bitmap = BitmapUtil.decodeSampledBitmapFromFile(file.getAbsolutePath(), 120, 160);
+       // Bitmap b= BitmapFactory.decodeFile(file.getAbsolutePath());
+       // Bitmap bit = BitmapUtil.decodeSampledBitmapFromFile(file.getAbsolutePath(), 90, 120);
+      //  Bitmap   bitmap=  BitmapUtil.compressImage(bit);//壓縮
+        Bitmap   bitmap=BitmapUtil.compressBmp(file.getAbsolutePath());
         return bitmap;
     }
 
-
-
+    public  Bitmap  getBt() {
+        File file = new File(mContext.getExternalCacheDir().getAbsolutePath() + File.separator + "temp.jpg");
+        Bitmap bt = BitmapFactory.decodeFile(file.getAbsolutePath());
+        return bt;
+    }
     /**
      * 功能描述: 摄像
      */

@@ -10,18 +10,14 @@ import android.widget.TextView;
 import com.badou.mworking.R;
 import com.badou.mworking.base.BaseFragment;
 import com.badou.mworking.entity.category.CategoryDetail;
-import com.badou.mworking.presenter.PlanIntroductionPresenter;
+import com.badou.mworking.presenter.category.PlanIntroductionPresenter;
 import com.badou.mworking.view.PlanIntroductionView;
 import com.badou.mworking.widget.CategoryTabContent;
 import com.captainhwz.layout.DefaultContentHandler;
 import com.captainhwz.layout.MaterialHeaderLayout;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by badou1 on 2015/7/30.
@@ -29,7 +25,6 @@ import butterknife.OnClick;
 public class PlanIntroductionFragment  extends BaseFragment implements PlanIntroductionView, CategoryTabContent.ScrollableContent {
 
     private static final String KEY_RID = "rid";
-
     public static PlanIntroductionFragment getFragment(String rid) {
         PlanIntroductionFragment fragment = new PlanIntroductionFragment();
         Bundle argument = new Bundle();
@@ -39,13 +34,9 @@ public class PlanIntroductionFragment  extends BaseFragment implements PlanIntro
     }
 
     ScrollView mParentScrollView;
-
-
     @Bind(R.id.introduction_text_view)
     TextView mIntroductionTextView;
-
     PlanIntroductionPresenter mPresenter;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,8 +52,6 @@ public class PlanIntroductionFragment  extends BaseFragment implements PlanIntro
         return mPresenter;
     }
 
-
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -75,8 +64,7 @@ public class PlanIntroductionFragment  extends BaseFragment implements PlanIntro
      */
     @Override
     public void setData(CategoryDetail categoryDetail) {
-       mIntroductionTextView.setText(categoryDetail.getEntry().getContent().getDescription()+"XXX");
-        mIntroductionTextView.setText("XXXXXXXXXX");
+       mIntroductionTextView.setText(categoryDetail.getPlan().getconfig().getDesc());
     }
     @Override
     public boolean checkCanDoRefresh(MaterialHeaderLayout frame, View content, View header) {

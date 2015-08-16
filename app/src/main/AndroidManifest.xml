@@ -82,6 +82,11 @@
         <!-- 声明sdk所需的service SDK核心功能-->
         <service android:name="com.easemob.chat.EMChatService" />
 
+       <!-- TaskSignImageActivity  签到显示照片-->
+        <activity
+            android:name="com.badou.mworking.TaskSignImageActivity"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name="com.badou.mworking.IntroductionActivity"
             android:screenOrientation="portrait"
